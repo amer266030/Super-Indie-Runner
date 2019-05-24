@@ -22,6 +22,10 @@
 		48DB1DD822953F700082CA21 /* RepeatingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DB1DD722953F700082CA21 /* RepeatingLayer.swift */; };
 		48DB1DDA229543940082CA21 /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DB1DD9229543940082CA21 /* GameConstants.swift */; };
 		48DB1DDD229605D90082CA21 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DB1DDC229605D90082CA21 /* Player.swift */; };
+		48DB1DE0229609AA0082CA21 /* PhysicsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DB1DDF229609AA0082CA21 /* PhysicsHelper.swift */; };
+		48DB1DE222960EEC0082CA21 /* GroundNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DB1DE122960EEC0082CA21 /* GroundNode.swift */; };
+		48DB1DE422961ABB0082CA21 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DB1DE322961ABB0082CA21 /* AnimationHelper.swift */; };
+		48DB1DE622962D490082CA21 /* ObjectHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DB1DE522962D490082CA21 /* ObjectHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,10 @@
 		48DB1DD722953F700082CA21 /* RepeatingLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingLayer.swift; sourceTree = "<group>"; };
 		48DB1DD9229543940082CA21 /* GameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConstants.swift; sourceTree = "<group>"; };
 		48DB1DDC229605D90082CA21 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		48DB1DDF229609AA0082CA21 /* PhysicsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsHelper.swift; sourceTree = "<group>"; };
+		48DB1DE122960EEC0082CA21 /* GroundNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundNode.swift; sourceTree = "<group>"; };
+		48DB1DE322961ABB0082CA21 /* AnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
+		48DB1DE522962D490082CA21 /* ObjectHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				4845E2DD228B655A00D09A62 /* Assets.xcassets */,
+				48DB1DDE2296099A0082CA21 /* Helper Files */,
 				48DB1DDB229605B60082CA21 /* Custom Classes */,
 				48DB1DD6229539560082CA21 /* Layers */,
 				4845E310228B761B00D09A62 /* Extensions */,
@@ -225,8 +234,19 @@
 			isa = PBXGroup;
 			children = (
 				48DB1DDC229605D90082CA21 /* Player.swift */,
+				48DB1DE122960EEC0082CA21 /* GroundNode.swift */,
 			);
 			path = "Custom Classes";
+			sourceTree = "<group>";
+		};
+		48DB1DDE2296099A0082CA21 /* Helper Files */ = {
+			isa = PBXGroup;
+			children = (
+				48DB1DDF229609AA0082CA21 /* PhysicsHelper.swift */,
+				48DB1DE322961ABB0082CA21 /* AnimationHelper.swift */,
+				48DB1DE522962D490082CA21 /* ObjectHelper.swift */,
+			);
+			path = "Helper Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,10 +386,14 @@
 				4845E312228B763D00D09A62 /* SKNode+Extensions.swift in Sources */,
 				48DB1DD5229537750082CA21 /* Layer.swift in Sources */,
 				4845E2D9228B655900D09A62 /* GameViewController.swift in Sources */,
+				48DB1DE622962D490082CA21 /* ObjectHelper.swift in Sources */,
 				48DB1DDD229605D90082CA21 /* Player.swift in Sources */,
 				48DB1DDA229543940082CA21 /* GameConstants.swift in Sources */,
+				48DB1DE422961ABB0082CA21 /* AnimationHelper.swift in Sources */,
 				4845E2D1228B655900D09A62 /* AppDelegate.swift in Sources */,
 				48DB1DD822953F700082CA21 /* RepeatingLayer.swift in Sources */,
+				48DB1DE222960EEC0082CA21 /* GroundNode.swift in Sources */,
+				48DB1DE0229609AA0082CA21 /* PhysicsHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

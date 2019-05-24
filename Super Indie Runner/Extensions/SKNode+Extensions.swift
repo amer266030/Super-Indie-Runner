@@ -35,7 +35,7 @@ extension SKNode {
         self.setScale(scale)
     }
     
-    func trunGravity(on value: Bool) {
+    func turnGravity(on value: Bool) {
         physicsBody?.affectedByGravity = value
     }
     
