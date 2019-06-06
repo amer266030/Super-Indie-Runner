@@ -27,8 +27,10 @@ class GameScene: SKScene {
             switch newValue {
             case .ongoing:
                 player.state = .running
+                pauseEnemies(bool: false)
             case .finished:
                 player.state = .idle
+                pauseEnemies(bool: true)
             default:
                 break
             }
@@ -40,11 +42,19 @@ class GameScene: SKScene {
     var touch = false
     var brake = false
     
+    var coins = 0
+    
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx: 0.0, dy: -6.0)
         
+        physicsBody = SKPhysicsBody(edgeFrom: CGPoint(x: frame.minX, y: frame.minY), to: CGPoint(x: frame.maxX, y: frame.minY))
+        physicsBody!.categoryBitMask = GameConstants.PhysicsCategories.frameCategory
+        physicsBody!.contactTestBitMask = GameConstants.PhysicsCategories.playerCategory
+        
         createLayers()
+        isPaused = true
+        isPaused = false
     }
     
     func createLayers() {
@@ -140,11 +150,46 @@ class GameScene: SKScene {
         brake = true
         player.physicsBody!.velocity.dy = 0.0
         
-        player.run(player.userData?.value(forKey: GameConstants.StringConstants.brakeDescendActionKey) as! SKAction)
+        if let sparky = ParticleHelper.addParticleEffect(name: GameConstants.StringConstants.breakSparkEmitterKey, particlePositionRange: CGVector(dx: 30.0, dy: 30.0), position: CGPoint(x: player.position.x, y: player.position.y - player.size.height/2)) {
+            sparky.zPosition = GameConstants.ZPoisitions.objectZ
+            addChild(sparky)
+        }
+        
+        player.run(player.userData?.value(forKey: GameConstants.StringConstants.brakeDescendActionKey) as! SKAction) {
+            ParticleHelper.removeParticeEffect(name: GameConstants.StringConstants.breakSparkEmitterKey, from: self)
+        }
     }
     
     func handleEnemyContact() {
         die(reason: 0)
+    }
+    
+    func pauseEnemies(bool: Bool) {
+        for enemy in tileMap[GameConstants.StringConstants.enemyName] {
+            enemy.isPaused = bool
+        }
+    }
+    
+    func handdleCollectible(sprite: SKSpriteNode) {
+        switch sprite.name! {
+        case GameConstants.StringConstants.coinName:
+            collectCoin(sprite: sprite)
+        default:
+            break
+        }
+    }
+    
+    func collectCoin(sprite: SKSpriteNode) {
+        coins += 1
+        
+        if let coinDust = ParticleHelper.addParticleEffect(name: GameConstants.StringConstants.coinDustEmitterKey, particlePositionRange: CGVector(dx: 5.0, dy: 5.0), position: CGPoint.zero) {
+            coinDust.zPosition = GameConstants.ZPoisitions.objectZ
+            sprite.addChild(coinDust)
+            sprite.run(SKAction.fadeOut(withDuration: 0.4)) {
+                coinDust.removeFromParent()
+                sprite.removeFromParent()
+            }
+        }
     }
     
     func die(reason: Int) {
@@ -154,6 +199,11 @@ class GameScene: SKScene {
         switch reason {
         case 0:
             deathAnimation = SKAction.animate(with: player.dieFrames, timePerFrame: 0.1, resize: true, restore: true)
+        case 1:
+            let up = SKAction.moveTo(y: frame.midY, duration: 0.25)
+            let wait = SKAction.wait(forDuration: 0.1)
+            let down = SKAction.moveTo(y: -player.size.height, duration: 0.2)
+            deathAnimation = SKAction.sequence([wait,up,down])
         default:
             deathAnimation = SKAction.animate(with: player.dieFrames, timePerFrame: 0.1, resize: true, restore: true)
         }
@@ -230,6 +280,12 @@ extension GameScene: SKPhysicsContactDelegate {
             gameState = .finished
         case GameConstants.PhysicsCategories.playerCategory | GameConstants.PhysicsCategories.enemyCategory:
             handleEnemyContact()
+        case GameConstants.PhysicsCategories.playerCategory | GameConstants.PhysicsCategories.frameCategory:
+            physicsBody = nil
+            die(reason: 1)
+        case GameConstants.PhysicsCategories.playerCategory | GameConstants.PhysicsCategories.collectableCategory:
+            let collectible = contact.bodyA.node?.name == player.name ? contact.bodyB.node as! SKSpriteNode : contact.bodyA.node as! SKSpriteNode
+            handdleCollectible(sprite: collectible)
         default:
             break
         }

@@ -18,6 +18,7 @@
 		4845E30C228B726E00D09A62 /* Level_0-1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4845E30B228B726E00D09A62 /* Level_0-1.sks */; };
 		4845E30F228B736100D09A62 /* TileSets.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4845E30E228B736100D09A62 /* TileSets.sks */; };
 		4845E312228B763D00D09A62 /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845E311228B763D00D09A62 /* SKNode+Extensions.swift */; };
+		48B7107F229A880000E4E86F /* ParticleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7107E229A880000E4E86F /* ParticleHelper.swift */; };
 		48DB1DD5229537750082CA21 /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DB1DD4229537750082CA21 /* Layer.swift */; };
 		48DB1DD822953F700082CA21 /* RepeatingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DB1DD722953F700082CA21 /* RepeatingLayer.swift */; };
 		48DB1DDA229543940082CA21 /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DB1DD9229543940082CA21 /* GameConstants.swift */; };
@@ -26,6 +27,9 @@
 		48DB1DE222960EEC0082CA21 /* GroundNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DB1DE122960EEC0082CA21 /* GroundNode.swift */; };
 		48DB1DE422961ABB0082CA21 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DB1DE322961ABB0082CA21 /* AnimationHelper.swift */; };
 		48DB1DE622962D490082CA21 /* ObjectHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DB1DE522962D490082CA21 /* ObjectHelper.swift */; };
+		48EC0FFD22A187DF002289AD /* CoinDustEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 48EC0FFB22A187DF002289AD /* CoinDustEmitter.sks */; };
+		48EC0FFE22A187DF002289AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48EC0FFC22A187DF002289AD /* Assets.xcassets */; };
+		48EC100022A1BABB002289AD /* BreakSparkEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 48EC0FFF22A1BABB002289AD /* BreakSparkEmitter.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,7 @@
 		4845E30B228B726E00D09A62 /* Level_0-1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Level_0-1.sks"; sourceTree = "<group>"; };
 		4845E30E228B736100D09A62 /* TileSets.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TileSets.sks; sourceTree = "<group>"; };
 		4845E311228B763D00D09A62 /* SKNode+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
+		48B7107E229A880000E4E86F /* ParticleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleHelper.swift; sourceTree = "<group>"; };
 		48DB1DD4229537750082CA21 /* Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
 		48DB1DD722953F700082CA21 /* RepeatingLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingLayer.swift; sourceTree = "<group>"; };
 		48DB1DD9229543940082CA21 /* GameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConstants.swift; sourceTree = "<group>"; };
@@ -71,6 +76,9 @@
 		48DB1DE122960EEC0082CA21 /* GroundNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundNode.swift; sourceTree = "<group>"; };
 		48DB1DE322961ABB0082CA21 /* AnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
 		48DB1DE522962D490082CA21 /* ObjectHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectHelper.swift; sourceTree = "<group>"; };
+		48EC0FFB22A187DF002289AD /* CoinDustEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CoinDustEmitter.sks; sourceTree = "<group>"; };
+		48EC0FFC22A187DF002289AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		48EC0FFF22A1BABB002289AD /* BreakSparkEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BreakSparkEmitter.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				4845E2DD228B655A00D09A62 /* Assets.xcassets */,
+				48EC0FFA22A18755002289AD /* Particle Emitters */,
 				48DB1DDE2296099A0082CA21 /* Helper Files */,
 				48DB1DDB229605B60082CA21 /* Custom Classes */,
 				48DB1DD6229539560082CA21 /* Layers */,
@@ -245,8 +254,19 @@
 				48DB1DDF229609AA0082CA21 /* PhysicsHelper.swift */,
 				48DB1DE322961ABB0082CA21 /* AnimationHelper.swift */,
 				48DB1DE522962D490082CA21 /* ObjectHelper.swift */,
+				48B7107E229A880000E4E86F /* ParticleHelper.swift */,
 			);
 			path = "Helper Files";
+			sourceTree = "<group>";
+		};
+		48EC0FFA22A18755002289AD /* Particle Emitters */ = {
+			isa = PBXGroup;
+			children = (
+				48EC0FFB22A187DF002289AD /* CoinDustEmitter.sks */,
+				48EC0FFC22A187DF002289AD /* Assets.xcassets */,
+				48EC0FFF22A1BABB002289AD /* BreakSparkEmitter.sks */,
+			);
+			path = "Particle Emitters";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,7 +377,10 @@
 				4845E30C228B726E00D09A62 /* Level_0-1.sks in Resources */,
 				4845E30F228B736100D09A62 /* TileSets.sks in Resources */,
 				4845E2DE228B655A00D09A62 /* Assets.xcassets in Resources */,
+				48EC100022A1BABB002289AD /* BreakSparkEmitter.sks in Resources */,
+				48EC0FFE22A187DF002289AD /* Assets.xcassets in Resources */,
 				4845E2E1228B655A00D09A62 /* LaunchScreen.storyboard in Resources */,
+				48EC0FFD22A187DF002289AD /* CoinDustEmitter.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +412,7 @@
 				48DB1DE622962D490082CA21 /* ObjectHelper.swift in Sources */,
 				48DB1DDD229605D90082CA21 /* Player.swift in Sources */,
 				48DB1DDA229543940082CA21 /* GameConstants.swift in Sources */,
+				48B7107F229A880000E4E86F /* ParticleHelper.swift in Sources */,
 				48DB1DE422961ABB0082CA21 /* AnimationHelper.swift in Sources */,
 				4845E2D1228B655900D09A62 /* AppDelegate.swift in Sources */,
 				48DB1DD822953F700082CA21 /* RepeatingLayer.swift in Sources */,
