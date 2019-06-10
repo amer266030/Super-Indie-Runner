@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4816120B22ACF48400E675B7 /* HUDDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4816120A22ACF48400E675B7 /* HUDDelegate.swift */; };
+		4816120D22ACF4D400E675B7 /* GameHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4816120C22ACF4D400E675B7 /* GameHUD.swift */; };
+		4816121122ACF55900E675B7 /* unanimous.inverted-brk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4816121022ACF54D00E675B7 /* unanimous.inverted-brk.ttf */; };
 		4845E2D1228B655900D09A62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845E2D0228B655900D09A62 /* AppDelegate.swift */; };
 		4845E2D7228B655900D09A62 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845E2D6228B655900D09A62 /* GameScene.swift */; };
 		4845E2D9228B655900D09A62 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845E2D8228B655900D09A62 /* GameViewController.swift */; };
@@ -50,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4816120A22ACF48400E675B7 /* HUDDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDDelegate.swift; sourceTree = "<group>"; };
+		4816120C22ACF4D400E675B7 /* GameHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHUD.swift; sourceTree = "<group>"; };
+		4816121022ACF54D00E675B7 /* unanimous.inverted-brk.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "unanimous.inverted-brk.ttf"; sourceTree = "<group>"; };
 		4845E2CD228B655900D09A62 /* Super Indie Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Super Indie Runner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4845E2D0228B655900D09A62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4845E2D6228B655900D09A62 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -106,6 +112,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4816120922ACF46100E675B7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4816120A22ACF48400E675B7 /* HUDDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4816120E22ACF51600E675B7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4816120F22ACF52000E675B7 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4816120F22ACF52000E675B7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4816121022ACF54D00E675B7 /* unanimous.inverted-brk.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		4845E2C4228B655900D09A62 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				4845E2DD228B655A00D09A62 /* Assets.xcassets */,
+				4816120E22ACF51600E675B7 /* Resources */,
+				4816120922ACF46100E675B7 /* Protocols */,
 				48EC0FFA22A18755002289AD /* Particle Emitters */,
 				48DB1DDE2296099A0082CA21 /* Helper Files */,
 				48DB1DDB229605B60082CA21 /* Custom Classes */,
@@ -244,6 +276,7 @@
 			children = (
 				48DB1DDC229605D90082CA21 /* Player.swift */,
 				48DB1DE122960EEC0082CA21 /* GroundNode.swift */,
+				4816120C22ACF4D400E675B7 /* GameHUD.swift */,
 			);
 			path = "Custom Classes";
 			sourceTree = "<group>";
@@ -374,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4845E2DC228B655900D09A62 /* Main.storyboard in Resources */,
+				4816121122ACF55900E675B7 /* unanimous.inverted-brk.ttf in Resources */,
 				4845E30C228B726E00D09A62 /* Level_0-1.sks in Resources */,
 				4845E30F228B736100D09A62 /* TileSets.sks in Resources */,
 				4845E2DE228B655A00D09A62 /* Assets.xcassets in Resources */,
@@ -407,7 +441,9 @@
 			files = (
 				4845E2D7228B655900D09A62 /* GameScene.swift in Sources */,
 				4845E312228B763D00D09A62 /* SKNode+Extensions.swift in Sources */,
+				4816120B22ACF48400E675B7 /* HUDDelegate.swift in Sources */,
 				48DB1DD5229537750082CA21 /* Layer.swift in Sources */,
+				4816120D22ACF4D400E675B7 /* GameHUD.swift in Sources */,
 				4845E2D9228B655900D09A62 /* GameViewController.swift in Sources */,
 				48DB1DE622962D490082CA21 /* ObjectHelper.swift in Sources */,
 				48DB1DDD229605D90082CA21 /* Player.swift in Sources */,

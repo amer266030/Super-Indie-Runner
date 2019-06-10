@@ -43,6 +43,9 @@ class GameScene: SKScene {
     var brake = false
     
     var coins = 0
+    var superCoins = 0
+    
+    var hudDelegate: HUDDelegate?
     
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
@@ -105,6 +108,7 @@ class GameScene: SKScene {
         }
         
         addPlayer()
+        addHUD()
     }
     
     func addPlayer() {
@@ -172,7 +176,8 @@ class GameScene: SKScene {
     
     func handdleCollectible(sprite: SKSpriteNode) {
         switch sprite.name! {
-        case GameConstants.StringConstants.coinName:
+        case GameConstants.StringConstants.coinName,
+             _ where GameConstants.StringConstants.superCoinNames.contains(sprite.name!):
             collectCoin(sprite: sprite)
         default:
             break
@@ -180,7 +185,11 @@ class GameScene: SKScene {
     }
     
     func collectCoin(sprite: SKSpriteNode) {
-        coins += 1
+        if GameConstants.StringConstants.superCoinNames.contains(sprite.name!) {
+            superCoins += 1
+        } else {
+            coins += 1
+        }
         
         if let coinDust = ParticleHelper.addParticleEffect(name: GameConstants.StringConstants.coinDustEmitterKey, particlePositionRange: CGVector(dx: 5.0, dy: 5.0), position: CGPoint.zero) {
             coinDust.zPosition = GameConstants.ZPoisitions.objectZ
@@ -190,6 +199,14 @@ class GameScene: SKScene {
                 sprite.removeFromParent()
             }
         }
+    }
+    
+    func addHUD() {
+        let hud = GameHUD(with: CGSize(width: frame.width, height: frame.height*0.1))
+        hud.position = CGPoint(x: frame.midX, y: frame.maxY - frame.height*0.05)
+        hud.zPosition = GameConstants.ZPoisitions.hudZ
+        hudDelegate = hud
+        addChild(hud)
     }
     
     func die(reason: Int) {
