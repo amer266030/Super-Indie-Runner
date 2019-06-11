@@ -46,12 +46,13 @@ class GameHUD: SKSpriteNode, HUDDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func upadteCoinLabel(coins: Int) {
-        
+    func updateCoinLabel(coins: Int) {
+        coinLabel.text = "\(coins)"
     }
     
     func addSuperCoin(index: Int) {
-        
+        let emptySlot = superCoinCounter[String(index)].first as! SKSpriteNode
+        emptySlot.alpha = 1.0
     }
     
     
