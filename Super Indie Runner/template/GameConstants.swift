@@ -33,6 +33,7 @@ struct GameConstants {
     }
     
     struct StringConstants {
+        static let gameName = "SUPER INDIE RUN"
         static let groundTilesName = "Ground Tiles"
         static let worldBackgroundNames = ["DessertBackground", "GrassBackground"]
         static let playerName = "Player"
@@ -46,6 +47,7 @@ struct GameConstants {
         static let superCoinNames = ["Super1", "Super2", "Super3"]
         static let gameFontName = "Unanimous Inverted -BRK-"
         static let playButton = "PlayButton"
+        static let emptyButton = "EmptyButton"
         static let retryButton = "RetryButton"
         static let menuButton = "MenuButton"
         static let pauseButton = "PauseButton"
