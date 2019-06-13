@@ -17,6 +17,12 @@ class MenuScene: SKScene {
     }
     
     func layoutView() {
+        let background = SKSpriteNode(imageNamed: GameConstants.StringConstants.menuBackground)
+        background.size = size
+        background.position = CGPoint(x: frame.midX, y: frame.midY)
+        background.zPosition = GameConstants.ZPoisitions.farBGZ
+        addChild(background)
+        
         let logoLabel = SKLabelNode(fontNamed: GameConstants.StringConstants.gameFontName)
         logoLabel.text = GameConstants.StringConstants.gameName
         logoLabel.fontSize = 200.0

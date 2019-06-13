@@ -16,6 +16,7 @@ class GameScene: SKScene {
     
     var worldLayer: Layer!
     var backgroundLayer: RepeatingLayer!
+    var foregroundLayer: RepeatingLayer!
     var mapNode: SKNode!
     var tileMap: SKTileMapNode!
     
@@ -53,6 +54,8 @@ class GameScene: SKScene {
     var levelKey: String
     
     var popup: PopupNode?
+    
+    let soundPlayer = SoundPlayer()
     
     var hudDelegate: HUDDelegate?
     var sceneManagerDelegate: SceneManagerDelegate?
@@ -93,7 +96,7 @@ class GameScene: SKScene {
         addChild(backgroundLayer)
         
         for i in 0...1 {
-            let backgroundImage = SKSpriteNode(imageNamed: GameConstants.StringConstants.worldBackgroundNames[0])
+            let backgroundImage = SKSpriteNode(imageNamed: GameConstants.StringConstants.worldBackgroundNames[world])
             backgroundImage.name = String(i)
             backgroundImage.scale(to: frame.size, width: false, multiplier: 1.0)
             backgroundImage.anchorPoint = CGPoint.zero
@@ -103,6 +106,25 @@ class GameScene: SKScene {
         }
         
         backgroundLayer.layerVelocity = CGPoint(x: -100.0, y: 0.0)
+        
+        if world == 1 {
+            
+            foregroundLayer = RepeatingLayer()
+            foregroundLayer.zPosition = GameConstants.ZPoisitions.hudZ
+            addChild(foregroundLayer)
+            
+            for i in 0...1 {
+                let foregroundImage = SKSpriteNode(imageNamed: GameConstants.StringConstants.foregroundLayer)
+                foregroundImage.name = String(i)
+                foregroundImage.scale(to: frame.size, width: false, multiplier: 1/15)
+                foregroundImage.anchorPoint = CGPoint.zero
+                foregroundImage.position = CGPoint(x: 0.0 + CGFloat(i) * foregroundImage.size.width, y: 0.0)
+                foregroundLayer.addChild(foregroundImage)
+            }
+            
+            foregroundLayer.layerVelocity = CGPoint(x: -300.0, y: 0.0)
+            
+        }
         
         load(level: levelKey)
     }
@@ -123,7 +145,7 @@ class GameScene: SKScene {
             
             for child in groundTiles.children {
                 if let sprite = child as? SKSpriteNode, sprite.name != nil {
-                    ObjectHelper.handdleChild(sprite: sprite, with: sprite.name!)
+                    ObjectHelper.handleChild(sprite: sprite, with: sprite.name!)
                 }
             }
             
@@ -197,12 +219,14 @@ class GameScene: SKScene {
         }
     }
     
-    func handdleCollectible(sprite: SKSpriteNode) {
+    func handleCollectible(sprite: SKSpriteNode) {
         switch sprite.name! {
         case GameConstants.StringConstants.coinName,
              _ where GameConstants.StringConstants.superCoinNames.contains(sprite.name!):
             collectCoin(sprite: sprite)
         case GameConstants.StringConstants.powerUpName:
+            run(soundPlayer.powerupSound)
+            run(soundPlayer.coinSound)
             player.activatePowerup(active: true)
         default:
             break
@@ -270,6 +294,7 @@ class GameScene: SKScene {
     }
     
     func die(reason: Int) {
+        run(soundPlayer.deathSound)
         gameState = .finished
         player.turnGravity(on: false)
         let deathAnimation: SKAction!
@@ -292,6 +317,10 @@ class GameScene: SKScene {
     }
     
     func finishGame() {
+        run(soundPlayer.completedSound)
+        if player.position.y > frame.size.height*0.7 {
+            coins += 10
+        }
         gameState = .finished
         var stars = 0
         let percentage = CGFloat(coins)/100.0
@@ -309,6 +338,12 @@ class GameScene: SKScene {
         ]
         ScoreManager.compare(scores: [scores], in: levelKey)
         createAndShowPopup(type: 1, title: GameConstants.StringConstants.completedKey)
+        
+        if level < 9 {
+            let nextLevelKey = "Level_\(world)-\(level+1)_Unlocked"
+            UserDefaults.standard.set(true, forKey: nextLevelKey)
+            UserDefaults.standard.synchronize()
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -349,6 +384,9 @@ class GameScene: SKScene {
         if gameState == .ongoing {
             worldLayer.update(dt)
             backgroundLayer.update(dt)
+            if world == 1 {
+                foregroundLayer.update(dt)
+            }
         }
  
     }
@@ -383,7 +421,7 @@ extension GameScene: SKPhysicsContactDelegate {
             die(reason: 1)
         case GameConstants.PhysicsCategories.playerCategory | GameConstants.PhysicsCategories.collectableCategory:
             let collectible = contact.bodyA.node?.name == player.name ? contact.bodyB.node as! SKSpriteNode : contact.bodyA.node as! SKSpriteNode
-            handdleCollectible(sprite: collectible)
+            handleCollectible(sprite: collectible)
         default:
             break
         }

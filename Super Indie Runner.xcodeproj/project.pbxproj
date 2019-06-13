@@ -31,6 +31,14 @@
 		4845E30C228B726E00D09A62 /* Level_0-1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4845E30B228B726E00D09A62 /* Level_0-1.sks */; };
 		4845E30F228B736100D09A62 /* TileSets.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4845E30E228B736100D09A62 /* TileSets.sks */; };
 		4845E312228B763D00D09A62 /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845E311228B763D00D09A62 /* SKNode+Extensions.swift */; };
+		48A865D922B23B1F00AF3ECE /* Level_1-1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 48A865D822B23B1F00AF3ECE /* Level_1-1.sks */; };
+		48A865E122B243EC00AF3ECE /* background.wav in Resources */ = {isa = PBXBuildFile; fileRef = 48A865DB22B243EB00AF3ECE /* background.wav */; };
+		48A865E222B243EC00AF3ECE /* gameover.wav in Resources */ = {isa = PBXBuildFile; fileRef = 48A865DC22B243EB00AF3ECE /* gameover.wav */; };
+		48A865E322B243EC00AF3ECE /* powerup.wav in Resources */ = {isa = PBXBuildFile; fileRef = 48A865DD22B243EB00AF3ECE /* powerup.wav */; };
+		48A865E422B243EC00AF3ECE /* coin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 48A865DE22B243EC00AF3ECE /* coin.wav */; };
+		48A865E522B243EC00AF3ECE /* button.wav in Resources */ = {isa = PBXBuildFile; fileRef = 48A865DF22B243EC00AF3ECE /* button.wav */; };
+		48A865E622B243EC00AF3ECE /* completed.wav in Resources */ = {isa = PBXBuildFile; fileRef = 48A865E022B243EC00AF3ECE /* completed.wav */; };
+		48A865E822B2464400AF3ECE /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A865E722B2464400AF3ECE /* SoundPlayer.swift */; };
 		48B7107F229A880000E4E86F /* ParticleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7107E229A880000E4E86F /* ParticleHelper.swift */; };
 		48DB1DD5229537750082CA21 /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DB1DD4229537750082CA21 /* Layer.swift */; };
 		48DB1DD822953F700082CA21 /* RepeatingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DB1DD722953F700082CA21 /* RepeatingLayer.swift */; };
@@ -93,6 +101,14 @@
 		4845E30B228B726E00D09A62 /* Level_0-1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Level_0-1.sks"; sourceTree = "<group>"; };
 		4845E30E228B736100D09A62 /* TileSets.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TileSets.sks; sourceTree = "<group>"; };
 		4845E311228B763D00D09A62 /* SKNode+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
+		48A865D822B23B1F00AF3ECE /* Level_1-1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Level_1-1.sks"; sourceTree = "<group>"; };
+		48A865DB22B243EB00AF3ECE /* background.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = background.wav; sourceTree = "<group>"; };
+		48A865DC22B243EB00AF3ECE /* gameover.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameover.wav; sourceTree = "<group>"; };
+		48A865DD22B243EB00AF3ECE /* powerup.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = powerup.wav; sourceTree = "<group>"; };
+		48A865DE22B243EC00AF3ECE /* coin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = coin.wav; sourceTree = "<group>"; };
+		48A865DF22B243EC00AF3ECE /* button.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button.wav; sourceTree = "<group>"; };
+		48A865E022B243EC00AF3ECE /* completed.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = completed.wav; sourceTree = "<group>"; };
+		48A865E722B2464400AF3ECE /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		48B7107E229A880000E4E86F /* ParticleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleHelper.swift; sourceTree = "<group>"; };
 		48DB1DD4229537750082CA21 /* Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
 		48DB1DD722953F700082CA21 /* RepeatingLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingLayer.swift; sourceTree = "<group>"; };
@@ -145,6 +161,7 @@
 		4816120E22ACF51600E675B7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				48A865DA22B243D100AF3ECE /* Audio */,
 				4816120F22ACF52000E675B7 /* Fonts */,
 			);
 			path = Resources;
@@ -266,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				4845E30B228B726E00D09A62 /* Level_0-1.sks */,
+				48A865D822B23B1F00AF3ECE /* Level_1-1.sks */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -284,6 +302,19 @@
 				4845E311228B763D00D09A62 /* SKNode+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		48A865DA22B243D100AF3ECE /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				48A865DB22B243EB00AF3ECE /* background.wav */,
+				48A865DF22B243EC00AF3ECE /* button.wav */,
+				48A865DE22B243EC00AF3ECE /* coin.wav */,
+				48A865E022B243EC00AF3ECE /* completed.wav */,
+				48A865DC22B243EB00AF3ECE /* gameover.wav */,
+				48A865DD22B243EB00AF3ECE /* powerup.wav */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 		48DB1DD6229539560082CA21 /* Layers */ = {
@@ -305,6 +336,7 @@
 				4801EF6A22AE41EF005EB862 /* ScorePopupNode.swift */,
 				4801EF6C22AE4210005EB862 /* BannerLabel.swift */,
 				4801EF7022AE42B3005EB862 /* SpriteKitButton.swift */,
+				48A865E722B2464400AF3ECE /* SoundPlayer.swift */,
 			);
 			path = "Custom Classes";
 			sourceTree = "<group>";
@@ -436,12 +468,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48A865E422B243EC00AF3ECE /* coin.wav in Resources */,
 				4845E2DC228B655900D09A62 /* Main.storyboard in Resources */,
+				48A865E522B243EC00AF3ECE /* button.wav in Resources */,
 				481E589022B10B9600DA2A5A /* PowerupEmitter.sks in Resources */,
+				48A865E122B243EC00AF3ECE /* background.wav in Resources */,
 				4816121122ACF55900E675B7 /* unanimous.inverted-brk.ttf in Resources */,
+				48A865D922B23B1F00AF3ECE /* Level_1-1.sks in Resources */,
+				48A865E622B243EC00AF3ECE /* completed.wav in Resources */,
 				4845E30C228B726E00D09A62 /* Level_0-1.sks in Resources */,
 				4845E30F228B736100D09A62 /* TileSets.sks in Resources */,
+				48A865E322B243EC00AF3ECE /* powerup.wav in Resources */,
 				4845E2DE228B655A00D09A62 /* Assets.xcassets in Resources */,
+				48A865E222B243EC00AF3ECE /* gameover.wav in Resources */,
 				48EC100022A1BABB002289AD /* BreakSparkEmitter.sks in Resources */,
 				48EC0FFE22A187DF002289AD /* Assets.xcassets in Resources */,
 				4845E2E1228B655A00D09A62 /* LaunchScreen.storyboard in Resources */,
@@ -470,6 +509,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48A865E822B2464400AF3ECE /* SoundPlayer.swift in Sources */,
 				4845E2D7228B655900D09A62 /* GameScene.swift in Sources */,
 				4845E312228B763D00D09A62 /* SKNode+Extensions.swift in Sources */,
 				4816120B22ACF48400E675B7 /* HUDDelegate.swift in Sources */,
