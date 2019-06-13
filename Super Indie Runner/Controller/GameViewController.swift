@@ -30,7 +30,10 @@ extension GameViewController: SceneManagerDelegate {
     }
     
     func presentGameScene(for level: Int, in world: Int) {
-        
+        let scene = GameScene(size: view.bounds.size, world: world, level: level, sceneManagerDelegate: self)
+        scene.scaleMode = .aspectFill
+        present(scene: scene)
+        print("I read This...\(world), \(level)")
     }
     
     func presentMenuScene() {

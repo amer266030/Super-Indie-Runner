@@ -58,6 +58,7 @@ struct GameConstants {
         static let fullStarName = "StarFull"
         static let bannerName = "Banner"
         static let popupButtonNames = ["MenuButton", "PlayButton", "RetryButton", "CancelButton"]
+        static let powerUpName = "Powerup"
         
         static let scoreScoreKey = "score"
         static let scoreCoinsKey = "coins"
@@ -83,6 +84,7 @@ struct GameConstants {
         
         static let coinDustEmitterKey = "CoinDustEmitter"
         static let breakSparkEmitterKey = "BreakSparkEmitter"
+        static let powerupEmitterKey = "PowerupEmitter"
     }
     
 }

@@ -54,13 +54,13 @@ class ScorePopupNode: PopupNode {
             if i == 1 {
                 empty.position.y += empty.size.height/4
             }
-            empty.zRotation = -CGFloat(Double.pi/2) + CGFloat(i) * CGFloat(-Double.pi/2)
+            empty.zRotation = -CGFloat(-Double.pi/2) + CGFloat(i) * CGFloat(-Double.pi/2)
             empty.zPosition = GameConstants.ZPoisitions.hudZ
             
             star.size = empty.size
             star.position = empty.position
             star.zRotation = empty.zRotation
-            star.zPosition = GameConstants.ZPoisitions.hudZ
+            star.zPosition = GameConstants.ZPoisitions.hudZ + 1
             star.name = GameConstants.StringConstants.fullStarName + "_\(i)"
             star.alpha = 0.0
             

@@ -19,6 +19,7 @@
 		4816120B22ACF48400E675B7 /* HUDDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4816120A22ACF48400E675B7 /* HUDDelegate.swift */; };
 		4816120D22ACF4D400E675B7 /* GameHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4816120C22ACF4D400E675B7 /* GameHUD.swift */; };
 		4816121122ACF55900E675B7 /* unanimous.inverted-brk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4816121022ACF54D00E675B7 /* unanimous.inverted-brk.ttf */; };
+		481E589022B10B9600DA2A5A /* PowerupEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 481E588F22B10B9600DA2A5A /* PowerupEmitter.sks */; };
 		4845E2D1228B655900D09A62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845E2D0228B655900D09A62 /* AppDelegate.swift */; };
 		4845E2D7228B655900D09A62 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845E2D6228B655900D09A62 /* GameScene.swift */; };
 		4845E2D9228B655900D09A62 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845E2D8228B655900D09A62 /* GameViewController.swift */; };
@@ -74,6 +75,7 @@
 		4816120A22ACF48400E675B7 /* HUDDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDDelegate.swift; sourceTree = "<group>"; };
 		4816120C22ACF4D400E675B7 /* GameHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHUD.swift; sourceTree = "<group>"; };
 		4816121022ACF54D00E675B7 /* unanimous.inverted-brk.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "unanimous.inverted-brk.ttf"; sourceTree = "<group>"; };
+		481E588F22B10B9600DA2A5A /* PowerupEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PowerupEmitter.sks; sourceTree = "<group>"; };
 		4845E2CD228B655900D09A62 /* Super Indie Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Super Indie Runner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4845E2D0228B655900D09A62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4845E2D6228B655900D09A62 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 				48EC0FFB22A187DF002289AD /* CoinDustEmitter.sks */,
 				48EC0FFC22A187DF002289AD /* Assets.xcassets */,
 				48EC0FFF22A1BABB002289AD /* BreakSparkEmitter.sks */,
+				481E588F22B10B9600DA2A5A /* PowerupEmitter.sks */,
 			);
 			path = "Particle Emitters";
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4845E2DC228B655900D09A62 /* Main.storyboard in Resources */,
+				481E589022B10B9600DA2A5A /* PowerupEmitter.sks in Resources */,
 				4816121122ACF55900E675B7 /* unanimous.inverted-brk.ttf in Resources */,
 				4845E30C228B726E00D09A62 /* Level_0-1.sks in Resources */,
 				4845E30F228B736100D09A62 /* TileSets.sks in Resources */,
