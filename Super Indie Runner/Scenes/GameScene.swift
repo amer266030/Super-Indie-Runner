@@ -224,9 +224,9 @@ class GameScene: SKScene {
         case GameConstants.StringConstants.coinName,
              _ where GameConstants.StringConstants.superCoinNames.contains(sprite.name!):
             collectCoin(sprite: sprite)
+            run(soundPlayer.coinSound)
         case GameConstants.StringConstants.powerUpName:
             run(soundPlayer.powerupSound)
-            run(soundPlayer.coinSound)
             player.activatePowerup(active: true)
         default:
             break
